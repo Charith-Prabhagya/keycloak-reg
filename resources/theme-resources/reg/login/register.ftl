@@ -78,6 +78,24 @@
                 </div>
             </#if>
 
+            <div class="${properties.kcFormGroupClass!}">
+                <div class="${properties.kcLabelWrapperClass!}">
+                    <label for="mobile" class="${properties.kcLabelClass!}">${msg("mobile_number")}</label>
+                </div>
+                <div class="${properties.kcInputWrapperClass!}">
+                    <input type="text" id="mobile" class="${properties.kcInputClass!}" name="mobile"
+                           value="${(register.formData.mobile!'')}"
+                           aria-invalid="<#if messagesPerField.existsError('mobile')>true</#if>"
+                    />
+
+                    <#if messagesPerField.existsError('mobile')>
+                        <span id="input-error-mobile" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                            ${kcSanitize(messagesPerField.get('mobile'))?no_esc}
+                        </span>
+                    </#if>
+                </div>
+            </div>
+
             <#if passwordRequired??>
                 <div class="${properties.kcFormGroupClass!}">
                     <div class="${properties.kcLabelWrapperClass!}">
