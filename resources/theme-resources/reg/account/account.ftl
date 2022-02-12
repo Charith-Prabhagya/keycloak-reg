@@ -56,13 +56,23 @@
             </div>
         </div>
         
-        <div class="form-group ${messagesPerField.printIfExists('mobile','has-error')}">
+        <div class="form-group ${messagesPerField.printIfExists('user.attributes.mobile','has-error')}">
             <div class="col-sm-2 col-md-2">
-                <label for="mobile" class="control-label">${msg("mobile_number")}</label> <span class="required">*</span>
+                <label for="user.attributes.mobile" class="control-label">${msg("mobile_number")}</label>
             </div>
 
             <div class="col-sm-10 col-md-10">
-                <input type="text" class="form-control" id="mobile" name="mobile" value="${(account.mobile!'')}"/>
+                <input type="text" class="form-control" id="user.attributes.mobile" name="user.attributes.mobile" value="${(account.attributes.mobile!'')}"/>
+            </div>
+        </div>
+        
+        <div class="form-group ${messagesPerField.printIfExists('user.attributes.passcode','has-error')}">
+            <div class="col-sm-2 col-md-2">
+                <label for="user.attributes.passcode" class="control-label">${msg("passcode")}</label>
+            </div>
+
+            <div class="col-sm-10 col-md-10">
+                <input type="text" class="form-control" id="user.attributes.passcode" name="user.attributes.passcode" value="${(account.attributes.passcode!'')}"/>
             </div>
         </div>
 
